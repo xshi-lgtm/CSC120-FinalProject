@@ -54,7 +54,7 @@ public class ClueList{
 
         addClue("BotanicGarden_1","She asked me to take care of the plants for a few days。");
 
-        addClue("CC_1", "She liked the video of beatiful Barcelona view.");
+        addClue("CC_1", "Shally said, \" Oh, you know what, I have watched tiktok for two hours today. The view in Barcelona is soooo beautiful. Your roommate also liked the video!\" ");
 
     }
 }

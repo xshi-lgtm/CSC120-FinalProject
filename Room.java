@@ -33,8 +33,8 @@ public class Room implements RoomRequirement{
 
     public void enterRoom(){
         if (this.activeLocation == -1){
-            if (locked = false){
-                if (hasDoor = false){
+            if (locked == false){
+                if (hasDoor == false){
                     this.activeLocation = 1;
                 }else{
                     throw new RuntimeException("There is a door! Open it before entering...");
