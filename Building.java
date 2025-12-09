@@ -98,4 +98,20 @@ public class Building implements BuildingRequirement{
         System.out.println("Available options at" + this.name + ":\n + enterBuilding \n + exitBuilding \n + goUp \n + goDown \n + goToFloor \n + showOptions");
     }
 
+    public void revealClue(String code, ClueList clueList, ClueBook clueBook){
+        Clue c = clueList.getClueByCode(code);
+        if (c == null){
+            System.out.println("[No such clue" + code + "]");
+            return;
+        }
+        if (c.isClueFound()){
+            System.out.println("You've already checked this place.");
+        } else {
+            System.out.println("You find a clue:");
+            System.out.println(c.getClueDescription());
+            c.markClueFound();
+            clueBook.addClue(c);
+        }
+    }
+
 }

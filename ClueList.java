@@ -19,15 +19,15 @@ public class ClueList{
     }
 
     private void loadClues() {
-        addClue("DORM_1", "Roommate's laptop and school bags are still in the room. ");
-        addClue("DORM_2", "Roommate's area is messy as it always has been. ");
+        addClue("DORM_1", "Roommate's laptop and school bags are still nicely on the desk. ");
+        addClue("DORM_2", "Roommate's clothes and socks are on the floor as it always has been. ");
         addClue("DORM_3", "There are several to-dos on the white board: \n 1. work out at gym \n 2. hand in SDS paper \n 3. go to landscape professor's office hour");
         addClue("DORM_4", "The coat has been taken away in the closet. ");
 
         addClue("GYM_1", "The reception says she haven't seen anyone like her, but you can definitely check upstairs. ");
         addClue("GYM_2", "Found a swimming suite that your roommate has with a smith college logo in the fitting room.");
         addClue("GYM_3", "No one found in the swimming pool. ");
-        addClue("GYM_4", "The friend says she did not go to class today. ");
+        addClue("GYM_4", "Friend: Your roommate didn't come to the SDS class today. ");
 
         addClue("SABINREED_1", "nothing is found here.");
         addClue("SABINREED_2", "I met her yesterday, and she asked me for the class notes.");
