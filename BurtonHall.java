@@ -2,13 +2,13 @@ import java.util.Scanner;
 
 public class BurtonHall extends Building{
 
-    public BurtonHall(String name, String address, int nFloors, Boolean hasElevator){
-        super(name, address, nFloors, hasElevator);
+    public BurtonHall(String name, String address, int nFloors){
+        super(name, address, nFloors);
     }
 
     public void explore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
-        System.out.println("--- Welcome to Campus Center! ---");
-        System.out.println("There are 4 floors in Burton: ");
+        System.out.println("--- Welcome to Burton Hall! ---");
+        System.out.println("There are four floors in Burton:");
         System.out.println("1. Restroom ");
         System.out.println("2. Professor Gorom's Office");
         System.out.println("3. Professor Price's Office");
@@ -89,21 +89,6 @@ public class BurtonHall extends Building{
         System.out.println("You suddenly think: maybe her parents know more...");
     }
 
-    // private void revealClue(String code, ClueList clueList, ClueBook clueBook){
-    //     Clue c = clueList.getClueByCode(code);
-    //     if (c == null){
-    //         System.out.println("[No such clue" + code + "]");
-    //         return;
-    //     }
-    //     if (c.isClueFound()){
-    //         System.out.println("You've already checked this place.");
-    //     } else {
-    //         System.out.println("You find a clue:");
-    //         System.out.println(c.getClueDescription());
-    //         c.markClueFound();
-    //         clueBook.addClue(c);
-    //     }
-    // }
 }
 
 

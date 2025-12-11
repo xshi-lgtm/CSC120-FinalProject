@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class ZiskindHouse extends Building{
     
-    public ZiskindHouse(String name, String address, int nFloors, Boolean hasElevator) {
-        super(name, address, nFloors, hasElevator);
+    public ZiskindHouse(String name, String address, int nFloors) {
+        super(name, address, nFloors);
     }
 
     public void explore (Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
@@ -38,20 +38,4 @@ public class ZiskindHouse extends Building{
         }
 
     }
-
-    // private void revealClue(String code, ClueList clueList, ClueBook clueBook){
-    //     Clue c = clueList.getClueByCode(code);
-    //     if (c == null){
-    //         System.out.println("[No such clue" + code + "]");
-    //         return;
-    //     }
-    //     if (c.isClueFound()){
-    //         System.out.println("You've already checked this place.");
-    //     } else {
-    //         System.out.println("You find a clue:");
-    //         System.out.println(c.getClueDescription());
-    //         c.markClueFound();
-    //         clueBook.addClue(c);
-    //     }
-    // }
 }

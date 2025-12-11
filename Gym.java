@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class Gym extends Building{
 
-    public Gym(String name, String address, int nFloors, Boolean hasElevator) {
-        super(name, address, nFloors, hasElevator);
+    public Gym(String name, String address, int nFloors) {
+        super(name, address, nFloors);
     }
 
     public void explore (Myself player, Scanner in, ClueList clueList, ClueBook clueBook){

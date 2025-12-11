@@ -5,8 +5,8 @@ public class Myself extends People{
     private boolean matchedNewRoommate;
     private boolean calledParent;
 
-    public Myself(String name, int age, String major, int classYear, String location){
-        super(name, age, major, classYear, location);
+    public Myself(String name, String location){
+        super(name, location);
         this.currentLocation = location;
         this.gameOver = false;
         this.matchedNewRoommate = false;
@@ -17,7 +17,7 @@ public class Myself extends People{
         return currentLocation;
     }
 
-    public void selfCurrentLocation(String loc){
+    public void setCurrentLocation(String loc){
         this.currentLocation = loc;
     }
 

@@ -2,8 +2,8 @@ import java.util.Scanner;
 
 public class CampusCenter extends Building{
     
-    public CampusCenter(String name, String address, int nFloors, Boolean hasElevator){
-        super(name, address, nFloors, hasElevator);    
+    public CampusCenter(String name, String address, int nFloors){
+        super(name, address, nFloors);    
     }
 
     public void explore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
@@ -44,21 +44,5 @@ public class CampusCenter extends Building{
             System.out.println("You circled the CC for 30 minutes, feeling tired, and left. ");
         }
     }
-
-    // private void revealClue(String code, ClueList clueList, ClueBook clueBook){
-    //     Clue c = clueList.getClueByCode(code);
-    //     if (c == null){
-    //         System.out.println("No such clue in the inventory.");
-    //         return;
-    //     }
-    //     if (c.isClueFound()){
-    //         System.out.println("Nothing new.");
-    //     }else{
-    //         System.out.println("Congratulations🎉~ You found a new clue...");
-    //         System.out.println(c.getClueDescription());
-    //         c.markClueFound();
-    //         clueBook.addClue(c);
-    //     }
-    // }
 
 }
