@@ -1,11 +1,26 @@
 import java.util.Scanner;
 
+/* The Building campus center inherited from building class */
+
 public class CampusCenter extends Building{
     
+    /**
+     * Constructor for campus center class
+     * @param name name of the building
+     * @param address address of the building
+     * @param nFloors number of floors in the building
+     */
     public CampusCenter(String name, String address, int nFloors){
         super(name, address, nFloors);    
     }
 
+    /**
+     * Method to explore campus center for clues.
+     * @param player palyer itself
+     * @param in user input
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
+     */
     public void explore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
         System.out.println("--- Welcome to Campus Center! ---");
         System.out.println("Here, you can:");

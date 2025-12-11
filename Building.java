@@ -1,16 +1,29 @@
+/* the parent class of buildings */
 public class Building{
     
-    //attributes 
+    //attributes
     protected String name;
     protected String address;
     protected int nFloors;
 
+    /**
+     * Constructor for building class
+     * @param name the name of the building
+     * @param address the address of the building
+     * @param nFloors the number of floors in the building
+     */
     public Building(String name, String address, int nFloors){
         this.name = name;
         this.address = address;
         this.nFloors = nFloors;
     }
 
+    /**
+     * Method to reveal the formatted clues in each building
+     * @param code the code to call the responding clue
+     * @param clueList the list of all clues
+     * @param clueBook the list of clues players already collected
+     */
     public void revealClue(String code, ClueList clueList, ClueBook clueBook){
         Clue c = clueList.getClueByCode(code);
         if (c == null){

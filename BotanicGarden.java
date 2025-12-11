@@ -1,13 +1,29 @@
 import java.util.Scanner;
 
+/* This is Botanic Garden, a subclass of building */
 public class BotanicGarden extends Building{
 
+    // Attributes: predefined path ways to reach the destination
     private String[] pathWays = {"forward", "left", "forward", "right"};
 
+    /**
+     * Constructor for BotanicGarden class inherited from Building class
+     * @param name Name of the building
+     * @param address Address of the building
+     * @param nFloors Number of floors in the building
+     */
+     
     public BotanicGarden(String name, String address, int nFloors){
         super(name, address, nFloors);
     }
 
+    /**
+     * Method to explore the Botanic Garden
+     * @param player player itself
+     * @param in user input
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
+     */
     public void explore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
         System.out.println("--- Welcome to Botanic Garden! ---");
         System.out.println("Here is a small storage area maze to get to the plant storage area where you can meet your roommate's botanic classmate.");
@@ -36,6 +52,12 @@ public class BotanicGarden extends Building{
         revealClue("BotanicGarden_1", clueList, clueBook);
     }
 
+    /** 
+     * override the revealClue method in Building class
+     * @param code code of the clue
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
+     */
     public void revealClue(String code, ClueList clueList, ClueBook clueBook){
         Clue c = clueList.getClueByCode(code);
         if (c == null){
