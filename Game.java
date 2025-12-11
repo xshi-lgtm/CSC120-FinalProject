@@ -11,17 +11,17 @@ public class Game {
         System.out.println("* move with 'go dorm/gym/neilson/burton/sabin-reed/hillyer/seelye/botanic-garden/cc'");
         System.out.println("* type 'explore' to search clues at current location");
         System.out.println("* type 'clues' to see the clues you already collected in your notebook");
-        System.out.println("* type 'guess' if you think you know where your roommate is");
+        System.out.println("* type 'guess' if you think you know whaere your roommate is");
         System.out.println("* type 'match' to match a new roommate");
         System.out.println("* type 'call parent' to call rommate's parent");
         System.out.println("* type 'map' to see the map of the school");
         System.out.println("* type 'help' to see all commands");
-
     }
 
     private static void showHelp(){
         System.out.println("The available commands are: ");
         System.out.println(" * help                     - see all available commands");
+        System.out.println(" * explore                  - find clues in current location (the command you have to enter everytime to search for clues)");
         System.out.println(" * go dorm                  - go to dorm in ziskind");
         System.out.println(" * go gym                   - go to ainsworth gym");
         System.out.println(" * go neilson               - go to neilson library");
@@ -31,7 +31,6 @@ public class Game {
         System.out.println(" * go seelye                - go to seelye hall");
         System.out.println(" * go botanic-garden        - go to botanic garden");
         System.out.println(" * go cc                    - go to campus cafe");
-        System.out.println(" * explore                  - find clues in current location");
         System.out.println(" * clues                    - see all collected clues");
         System.out.println(" * guess                    - guess the final key for the game");
         System.out.println(" * match                    - match new roommate");
@@ -90,7 +89,7 @@ public class Game {
         }
     }
 
-    private static void handleGuess(Myself player, Scanner in){
+    private static boolean handleGuess(Myself player, Scanner in){
         System.out.println("Where do you think your roommate is? ");
         String answer = in.nextLine().trim().toLowerCase();
         if (answer.contains("china")){
@@ -98,8 +97,10 @@ public class Game {
             System.out.println("Your phone buzzed: message from roommate");
             System.out.println("\'Hey! I rushed to airport so I didn't tell you yet. I was on the plane to China yesterday and am now taking a connecting fly in Qatar. I'll talk to you later!\'");
             System.out.println("=== Good Ending: You figured out that your roommate is going back home in China. ===");
+            return true;
         }else{
             System.out.println("That doesn't seem right. Keep finding clues!!");
+            return false;
         }
     }
 
@@ -204,8 +205,12 @@ public class Game {
                     handleExplore(player, in, clueList, clueBook, ziskind_house, ainsworth_gym, neilson_library, burton_hall, sabin_reed, hillyer_hall, seelye_hall, botanic_garden, campus_center);
                     break;
                 case "guess":
-                    handleGuess(player, in);
-                    break;
+                    if(handleGuess(player, in)){
+                        running = false;
+                        break;
+                    }else{
+                        break;
+                    }
                 case "match":
                     handleMatchNewRoommate(player);
                     break;

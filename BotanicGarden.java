@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class BotanicGarden extends Building{
 
-    private String[] pathWays = {"forward", "left", "forward","right", "go down", "left"};
+    private String[] pathWays = {"forward", "left", "forward", "right"};
 
     public BotanicGarden(String name, String address, int nFloors){
         super(name, address, nFloors);
