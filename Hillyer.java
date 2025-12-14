@@ -1,37 +1,63 @@
 import java.util.Scanner;
 
+/* The hillyer class inherited from building class */
 public class Hillyer extends Building{
     
+    /**
+     * The constructor for hillyer hall inherited from building
+     * @param name the name of hillyer hall
+     * @param address the address of hillyer hall
+     * @param nFloors the number of floors in hillyer hall
+     */
     public Hillyer(String name, String address, int nFloors){
         super(name, address, nFloors);
     }
 
+    /**
+     * Method to explore hillyer hall for clues.
+     * @param player palyer itself
+     * @param in user input
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
+     */
     public void explore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
         System.out.println("--- Welcome to Hillyer! ---");
-        System.out.println("There are 3 floors in Hillyer: ");
-        System.out.println("1. Studios and hallways ");
-        System.out.println("2. Photography darkroom (special access required) ");
-        System.out.println("3. Classrooms and lounge ");
-        System.out.println("Choose the floor you want to go to (1-3): ");
+        boolean exploringHillyer = true;
+        while (exploringHillyer){
+            System.out.println("There are 3 floors in Hillyer: ");
+            System.out.println("1. Studios and hallways ");
+            System.out.println("2. Photography darkroom (special access required) ");
+            System.out.println("3. Classrooms and lounge ");
+            System.out.println("Choose the floor you want to go to (1-3) or type 'exit' to leave: ");
 
-        String choice1 = in.nextLine().trim();
+            String choice1 = in.nextLine().trim();
 
-        switch(choice1) {
-            case "1":
-                System.out.println("Nothing special here on the first floor");
-                break;
-            case "2":
-                exploreDarkroom(in, clueList, clueBook);
-                break;
-            case "3":
-                exploreThirdFloor(in, clueList, clueBook);
-                break;
-            default:
-                System.out.println("You get confused and decided to leave the building.");
+            switch(choice1) {
+                case "1":
+                    System.out.println("Nothing special here on the first floor");
+                    break;
+                case "2":
+                    exploreDarkroom(in, clueList, clueBook);
+                    break;
+                case "3":
+                    exploreThirdFloor(in, clueList, clueBook);
+                    break;
+                case "exit":
+                    System.out.println("You decidec to leave the building.");
+                    exploringHillyer = false;
+                default:
+                    System.out.println("You get confused and decided to leave the building.");
+            }
         }
-
     }
 
+    /**
+     * Method to explore darkroom for clues.
+     * @param player palyer itself
+     * @param in user input
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
+     */
     private void exploreDarkroom(Scanner in, ClueList clueList, ClueBook clueBook){
         System.out.println("The darkroom door is locked. ");
         System.out.println("Knock? (yes/no): ");
@@ -67,6 +93,13 @@ public class Hillyer extends Building{
         }
     }
 
+    /**
+     * Method to explore the third floor for clues.
+     * @param player palyer itself
+     * @param in user input
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
+     */
     private void exploreThirdFloor(Scanner in, ClueList clueList, ClueBook clueBook){
         System.out.println("On the third floor lounge, you run into Emily.");
         Boolean talking = true;
@@ -87,6 +120,7 @@ public class Hillyer extends Building{
                     break;
                 case "3":
                     System.out.println("Emily: See ya!");
+                    talking = false;
                     break;
                 default:
                     System.out.println("Emily: I don't really understand what you're saying. ");

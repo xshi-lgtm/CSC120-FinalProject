@@ -5,9 +5,9 @@ public class Gym extends Building{
 
     /**
      * The constructor for gym
-     * @param name the name of burton hall
-     * @param address the address of burton hall
-     * @param nFloors the number of floors in burton hall
+     * @param name the name of gym
+     * @param address the address of gym
+     * @param nFloors the number of floors in gym
      */
     public Gym(String name, String address, int nFloors) {
         super(name, address, nFloors);
