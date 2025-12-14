@@ -14,9 +14,11 @@ public class BurtonHall extends Building{
     }
 
     /**
-     * Method to explore burton hall for clues.
-     * User can stay inside Burton and keep choosing floors
-     * until they type "exit" / "b" to leave the building.
+     * Method to explore campus center for clues.
+     * @param player palyer itself
+     * @param in user input
+     * @param clueList all clues in the game
+     * @param clueBook player's collected clues
      */
     public void explore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook){
         System.out.println("--- Welcome to Burton Hall! ---");

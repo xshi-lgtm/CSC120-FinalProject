@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
+/* The game class that run the entire program */
 public class Game {
 
+    /**
+     * The method that prints the introduction to the game
+     */
     private static void intro(){
         System.out.println("===================================================================");
         System.out.println("===== Welcome to the Game: Finding the 'Disappeared Roommate' =====");
@@ -18,6 +22,9 @@ public class Game {
         System.out.println("* type 'help' to see all commands");
     }
 
+    /**
+     * The method that prints all the commands to the user in the console
+     */
     private static void showHelp(){
         System.out.println("The available commands are: ");
         System.out.println(" * help                     - see all available commands");
@@ -40,6 +47,9 @@ public class Game {
         System.out.println("**************************************************");
     }
 
+    /**
+     * The method that prints the campus map to the user
+     */
     private static void showMap(){
         System.out.println("The buildings on campus: ");
         System.out.println(" * dorm                  - your house ziskind");
@@ -54,6 +64,22 @@ public class Game {
         System.out.println("***************************************************");
     }
 
+    /**
+     * The method that handles the explore command to different specific methods in child classes. 
+     * @param player the player itself
+     * @param in the user input
+     * @param clueList the list of all clues
+     * @param clueBook the clues collected by the users
+     * @param ziskind_house the ziskind house instance created by ziskind house class
+     * @param ainsworth_gym the ainsworth gym instance created by ainsworth gym class
+     * @param neilson_library neilson library instance created by the neilson library class
+     * @param burton_hall burton hall instance created by the burton hall class
+     * @param sabin_reed sabin reed hall instance created by the sabin reed class
+     * @param hillyer_hall hillyer hall instance created by the hillyer hall class
+     * @param seelye_hall seelye hall instance created by the seelye hall class
+     * @param botanic_garden the botanic garden instance created by the botanic garden class
+     * @param campus_center campus center instance created by the campus center class
+     */
     private static void handleExplore(Myself player, Scanner in, ClueList clueList, ClueBook clueBook, ZiskindHouse ziskind_house, Gym ainsworth_gym, NeilsonLibrary neilson_library, BurtonHall burton_hall, SabinReed sabin_reed, Hillyer hillyer_hall, Seelye seelye_hall, BotanicGarden botanic_garden, CampusCenter campus_center){
         String location = player.getCurrentLocation();
         switch(location){
@@ -89,6 +115,12 @@ public class Game {
         }
     }
 
+    /**
+     * the method that handles users' guesses
+     * @param player players themselves
+     * @param in the user input
+     * @return true if the player guessed the right answer, false otherwise
+     */
     private static boolean handleGuess(Myself player, Scanner in){
         System.out.println("Where do you think your roommate is? ");
         String answer = in.nextLine().trim().toLowerCase();
@@ -104,6 +136,10 @@ public class Game {
         }
     }
 
+    /**
+     * the method that handles users' matching new roommate request
+     * @param player the player themselves
+     */
     private static void handleMatchNewRoommate(Myself player){
         System.out.println("You opened Smith Portal, residence life self service, and fill out the form requesting for new roommate.");
         System.out.println("You soon get a new roommate and live together happily.");
@@ -112,6 +148,10 @@ public class Game {
         System.out.println("=== Bad Ending: you make your roommate angry. ===");
     }
 
+    /**
+     * the method that handles users' call parent request
+     * @param player player themselves
+     */
     private static void handleCallParent(Myself player){
         if(player.hasCalledParent()){
             System.out.println("You already called her parents before.");
@@ -122,6 +162,9 @@ public class Game {
         System.out.println("They said 'Oh, we have some family emergency so we asked her to travel back to China for a while. We thought she told you already. Don't worry!'");
     }
     
+    /**
+     * main that runs the entire program
+     */
     public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         ClueList clueList = new ClueList();

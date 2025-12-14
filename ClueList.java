@@ -1,23 +1,41 @@
 import java.util.HashMap;
 import java.util.Map;
 
+/* The clue list that stores all the clues */
 public class ClueList{
 
+    // attributes
     private Map<String, Clue> clues;
 
+    /**
+     * constructor that initializes an empty hashmap and then loads the clues into the clue list
+     */
     public ClueList() {
         clues = new HashMap<>();
         loadClues();
     }
 
+    /**
+     * the private method that adds all the clues to the stored clue list
+     * @param code the clue code
+     * @param description the clue description
+     */
     private void addClue(String code, String description) {
         clues.put(code, new Clue(code, description));
     }
 
+    /**
+     * the method to access the clue by its code
+     * @param code the code of the clue
+     * @return the clue by its code
+     */
     public Clue getClueByCode(String code) {
         return clues.get(code);
     }
 
+    /**
+     * the method to load all the clues to the hashmap
+     */
     private void loadClues() {
         addClue("DORM_1", "Roommate's laptop and school bags are still nicely on the desk. ");
         addClue("DORM_2", "Roommate's clothes and socks are on the floor as it always has been. ");
