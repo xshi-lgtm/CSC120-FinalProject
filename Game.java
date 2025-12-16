@@ -43,7 +43,7 @@ public class Game {
         System.out.println(" * match                    - match new roommate");
         System.out.println(" * call parent              - find roommate's parents");
         System.out.println(" * map                      - show campus map");
-        System.out.println(" * quit                     - quite the game");
+        System.out.println(" * quit                     - quit the game");
         System.out.println("**************************************************");
     }
 
