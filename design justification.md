@@ -1,0 +1,11 @@
+Our primary design goal was to create a narrative-driven text adventure that allows players to explore a campus environment, interact with characters, and piece together clues to solve a mystery -- that is where is your disappearing roommate. Because the story depends heavily on location, discovery, and dialogue, we structured the program using object-oriented principles that mirror the real world: buildings, rooms, people, and clues.
+
+We chose to represent each major location on campus as a subclass of a Building class. This allowed us to define shared behavior (such as entering a building or exploring it) while still giving each building unique functionality. For example, the gym contains multiple floors with different interactions, while Neilson Library requires card access and includes computer-based clues. This approach made the code modular and easier to extend, since adding a new building only requires creating a new subclass rather than rewriting existing logic.
+
+We also separated clue data from player progress. All clues exist in a central ClueList, while the player maintains a personal ClueBook that records which clues have been found. This separation made it easy to ensure that clues could not be discovered multiple times while still allowing the player to review their progress.
+
+Another important design decision was using interactive loops within building exploration. Once a player enters a building and chooses to explore, they remain inside that building until they explicitly exit. This improved usability and immersion, and avoided forcing players to repeatedly re-enter commands for each small action.
+
+An alternative we considered was implementing the game using a single global command loop where all interactions—movement, dialogue, and searching—were handled by one large method with many conditional statements. While this approach would have reduced the number of classes, it quickly became difficult to manage and would have made the code harder to read, debug, and extend.
+
+We also briefly considered representing locations purely as data (for example, using large maps or lists of strings) instead of separate classes. However, this would have limited our ability to attach distinct behaviors—such as restricted access, multi-floor navigation, or NPC dialogue—to specific locations.
