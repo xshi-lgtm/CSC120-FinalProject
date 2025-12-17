@@ -48,7 +48,6 @@ public class NeilsonLibrary extends Building{
                 default:
                     System.out.println("You feeling a bit lost. ");
             }
-
         }
     }
 

@@ -6,6 +6,6 @@ We also separated clue data from player progress. All clues exist in a central C
 
 Another important design decision was using interactive loops within building exploration. Once a player enters a building and chooses to explore, they remain inside that building until they explicitly exit. This improved usability and immersion, and avoided forcing players to repeatedly re-enter commands for each small action.
 
-An alternative we considered was implementing the game using a single global command loop where all interactions—movement, dialogue, and searching—were handled by one large method with many conditional statements. While this approach would have reduced the number of classes, it quickly became difficult to manage and would have made the code harder to read, debug, and extend.
+An alternative we considered was implementing the game using a single global command loop where all interactions—movement, dialogue, and searching—were handled by one large method with many conditional statements. While this approach would have reduced the number of classes, the huge code chunk became difficult to manage and would have made the code harder to read, debug, and extend.
 
 We also briefly considered representing locations purely as data (for example, using large maps or lists of strings) instead of separate classes. However, this would have limited our ability to attach distinct behaviors—such as restricted access, multi-floor navigation, or NPC dialogue—to specific locations.
